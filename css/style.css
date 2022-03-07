@@ -694,7 +694,8 @@ img{
 .places_cards{
      display: grid;
      grid-template-columns: repeat(6, 1fr);
-     grid-gap: 10px;
+     grid-column-gap: 10px;
+     grid-row-gap: 10px;
 }
 .places_card{
      position: relative;
@@ -767,7 +768,7 @@ img{
 .tours_tour{
      display: grid;
      grid-template-columns: repeat(2, 1fr);
-     grid-gap: 0 108px;
+     grid-column-gap: 108px;
      align-items: center;
      margin-bottom: 77px;
 }
@@ -813,13 +814,15 @@ img{
 
 .top_cards{
      display: grid;
-     grid-template-columns: repeat(3, 1fr);
-     grid-gap: 57px;
+     grid-template-columns: repeat(6, 1fr);
+     grid-column-gap: 57px;
+     grid-row-gap: 57px;
 }
 
 .top_card{
      display: flex;
      flex-direction: column;
+     grid-column: span 2; /*всего 6 столбцов (см. выше) каждая арточка занимает 2 столбца*/
 }
 
 .top_card-pic{
@@ -958,6 +961,62 @@ img{
 
 /*/////MEDIA START/////*/
 
+
+@media screen and (max-width: 960px) {
+     .benefits{
+          margin-bottom: 75px;     /*для лучшего внешнего вида*/
+     }
+     .benefits_card{
+          margin-bottom: 60px;     /*для лучшего внешнего вида*/
+     }
+     .search-form_field {             /* инпуты в intro*/
+          margin-bottom: 25px; 
+     }
+     .benefits_cards {             /*отступы в карточках benefits*/
+          padding: 0 15px;
+          grid-column-gap: 35px;
+     }
+     .benefits_title{
+          padding: 55px 15px;
+     }
+     .benefits_wrap{
+          box-shadow: none;   /*убираем тень у блока benefits*/
+     }
+
+     .places_card_size_lg {  /* изменяем размер карточек верхнего ряда (больших)*/
+          grid-column: span 6;
+     }
+     .places_card_size_sm {
+          grid-column: span 6;
+     }
+     .tours_tour{
+          grid-column-gap: 35px;
+     }
+     .tour_info{
+          padding-left: 0;
+     }
+     .tour_title{
+          margin-bottom: 15px;
+     }
+     .tour_desc{
+          margin-bottom: 15px;
+     }
+     .top_cards{
+          grid-column-gap: 25px;  /*уменьшаем отступы*/
+          grid-row-gap: 55px;
+     }
+     .top_card{
+          grid-column: span 3; /* делаем 2 столбца (6/3)*/
+     }
+     .top_card-pic{
+          margin-bottom: 20px;
+     }
+     .footer{
+          padding: 60px 15px;
+     }
+}
+
+/* медиа бургер меню*/
 @media screen and (max-width: 767px) {
      .header_burger{
           display: block;
